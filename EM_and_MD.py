@@ -109,8 +109,8 @@ def steepest_descent(atom_coord,drstep,forces):
 # ====>>>>>
         sx=...
         sy=...
-        r0xnew=r0x+...
-        r0ynew=r0y+...
+        r0xnew= r0x + ...
+        r0ynew= r0y + ...
 # <<<<<====
 
         new_positions.append([r0xnew,r0ynew,coord[2]])
@@ -630,7 +630,6 @@ def update_canvas(repack=1):
     update_energy()
     Iterations = 0
 
-
 ################
 # MAIN PROGRAM #
 ################
@@ -643,10 +642,10 @@ def select_minimizer(*args):
     reset()
     if minimizer_selector.index('current') == 0: # First tab is Steepest Descent
         Minimizer = Minimizers.SteepestDescent
-        selected_method_text.set("Selected: Steepest Descent")
+        selected_method_text.set("Active method: Steepest Descent")
     else:
         Minimizer = Minimizers.Verlet
-        selected_method_text.set("Selected: Verlet")
+        selected_method_text.set("Active method: Verlet")
 
 def start():
     global canvas_event
@@ -745,7 +744,7 @@ create_entry(verlet_pack, "T (K)", temp, Temperature, set_temp)
 create_entry(verlet_pack, "Timestep", tstep, timestep, set_tstep)
 
 # Set up title
-Label(title,text="Charged particles Molecular Dynamics",foreground='red',font='times 18 bold').pack(side='left')
+Label(title,text="EM & MD",foreground='blue',font='times 18 bold').pack(side='left')
 
 # Set up reporting labels
 report_var_time = StringVar()
